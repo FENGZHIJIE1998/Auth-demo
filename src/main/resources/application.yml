@@ -4,7 +4,7 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
-  port: 8082
+  port: 8002
   servlet:
     context-path: /auth
 #spring
@@ -30,8 +30,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-
-      url: jdbc:mysql://localhost:3306/googlecode?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=CTT
+      url: jdbc:mysql://localhost:3306/auth?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=CTT
       username: root
       password: 123
       initial-size: 10
