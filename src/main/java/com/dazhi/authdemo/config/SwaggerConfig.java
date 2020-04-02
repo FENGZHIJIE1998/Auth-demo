@@ -31,14 +31,14 @@ public class SwaggerConfig {
                 // 是否开启
                 .enable(swaggerEnabled).select()
                 // 扫描的路径包
-                .apis(RequestHandlerSelectors.basePackage("com.dazhi.googleauth"))
+                .apis(RequestHandlerSelectors.basePackage("com.dazhi.authdemo"))
                 // 指定路径处理PathSelectors.any()代表所有的路径
                 .paths(PathSelectors.any()).build().pathMapping("/");
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("opt")
+                .title("authdemo")
                 .description("dazhi | 大志")
                 // 作者信息
                 .contact(new Contact("CrazyJay", "https://blog.csdn.net/weixin_42236404", "793914255@qq.com"))
