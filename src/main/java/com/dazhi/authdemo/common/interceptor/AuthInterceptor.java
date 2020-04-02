@@ -2,11 +2,12 @@ package com.dazhi.authdemo.common.interceptor;
 
 import com.alibaba.fastjson.JSON;
 
-import com.dazhi.googleauth.common.utils.HttpContextUtil;
-import com.dazhi.googleauth.common.utils.Result;
-import com.dazhi.googleauth.modules.auth.entity.UserEntity;
-import com.dazhi.googleauth.modules.auth.service.AuthService;
-import com.dazhi.googleauth.common.utils.TokenUtil;
+import com.dazhi.authdemo.modules.auth.service.AuthService;
+import com.dazhi.authdemo.common.utils.HttpContextUtil;
+import com.dazhi.authdemo.common.utils.Result;
+import com.dazhi.authdemo.modules.auth.entity.UserEntity;
+
+import com.dazhi.authdemo.common.utils.TokenUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
