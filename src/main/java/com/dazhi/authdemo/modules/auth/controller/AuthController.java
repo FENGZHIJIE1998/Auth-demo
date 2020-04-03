@@ -20,8 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 @RestController("/")
 public class AuthController {
 
-    @Autowired
-    private AuthService authService;
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
 
     /**
      * 登录

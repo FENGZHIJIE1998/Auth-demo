@@ -9,10 +9,6 @@ server:
     context-path: /auth
 #spring
 spring:
-  # 环境 dev|test|prod
-  #profiles:
-  #  active: dev
-  # jackson时间格式化
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
@@ -47,13 +43,6 @@ spring:
       stat-view-servlet:
         enabled: true
         url-pattern: /druid/*
-        #login-username: admin
-        #login-password: admin
-      filter:
-        stat:
-        #log-slow-sql: true
-        #slow-sql-millis: 1000
-        #merge-sql: false
         wall:
           config:
             multi-statement-allow: true
