@@ -2,7 +2,10 @@ package com.dazhi.authdemo.modules.auth.vo;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class TokenVO {
-    String token;
+    private String token;
+    private LocalDateTime expireTime;
 }

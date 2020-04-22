@@ -1,7 +1,6 @@
 package com.dazhi.authdemo.modules.auth.controller;
 
 
-
 import com.dazhi.authdemo.common.utils.Result;
 import com.dazhi.authdemo.common.utils.TokenUtil;
 import com.dazhi.authdemo.modules.auth.dto.LoginDTO;
@@ -10,6 +9,8 @@ import com.dazhi.authdemo.modules.auth.service.AuthService;
 import com.dazhi.authdemo.modules.auth.vo.TokenVO;
 import net.bytebuddy.description.ByteCodeElement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +34,10 @@ public class AuthController {
      * @return token登录凭证
      */
     @PostMapping("/login")
-    public Result login(@RequestBody LoginDTO loginDTO) {
+    public Result login(@Validated @RequestBody LoginDTO loginDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return Result.build(400, bindingResult.getFieldError().getDefaultMessage());
+        }
         String username = loginDTO.getUsername();
         String password = loginDTO.getPassword();
         //用户信息
@@ -72,7 +76,7 @@ public class AuthController {
      * @return
      */
     @PostMapping("/test")
-    public Result test(String token ) {
+    public Result test(String token) {
 
         return Result.ok("恭喜你，验证成功啦，我可以返回数据给你");
     }
